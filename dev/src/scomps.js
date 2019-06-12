@@ -49,9 +49,13 @@ export const PostWrapper = styled.div`{
         letter-spacing: 1px;
     }
 
-    #one {
+    p:last-child {
+        border: solid red 2px;
+    }
+
+    #${props => props.postId} {
         display: ${props => 
-            props.open === 'true' && 'none'
+            props.open === 'false' && 'none'
         }
     }
 }`
@@ -70,3 +74,10 @@ export const SeeMoreButton = styled.button`{
         cursor: pointer;
     }
 }`
+
+
+// #one {
+//     display: ${props => 
+//         props.open === 'true' && 'none'
+//     }
+// }

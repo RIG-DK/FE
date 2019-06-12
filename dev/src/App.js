@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom';
 import Nav from './comps/Nav.jsx';
-import Post from './comps/Post.jsx';
+import PostSum from './comps/PostSum.jsx';
+import PostPage from './views/PostPage.jsx'
 
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
         <Nav/>
-        <Post/>
-
+        <div className='Routes'>
+          <Route exact path='/' component={PostSum} />
+          <Route path='/post/:id' component={PostPage} />
+        </div>
       </div>
     );
   }
