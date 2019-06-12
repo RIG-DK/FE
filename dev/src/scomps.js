@@ -41,7 +41,7 @@ export const PostWrapper = styled.div`{
         cursor: pointer;
     }
 
-    h3, p {
+    h3, h5, p {
         margin-left: 2%;
         width: 95%;
         margin-bottom: 2%;
@@ -49,15 +49,21 @@ export const PostWrapper = styled.div`{
         letter-spacing: 1px;
     }
 
-    p:last-child {
-        border: solid red 2px;
+    h5 {
+        font-weight: 400;
+    }
+
+    p {
+        display: none;
     }
 
     #${props => props.postId} {
         display: ${props => 
-            props.open === 'false' && 'none'
+            props.open === 'true' && 'block'
         }
     }
+
+
 }`
 
 export const SeeMoreButton = styled.button`{

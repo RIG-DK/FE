@@ -28,10 +28,8 @@ let dummyData = [
 
     const [show, setShow] = useState('false');
     const [posts] = useState(dummyData)
-    const [postid, setPostid] = useState(null)
+    const [postid, setPostid] = useState('one')
     
-    // Now, state needs to refresh with post id clicked on first click, not second, and, default view should be small view, not large
-
     return (
         <div>
             {posts.map(post => {
@@ -45,7 +43,7 @@ let dummyData = [
                         }}
                      >
                         <h3>{post.title}</h3>
-                        <p>{post.summary}</p> <br/>
+                        <h5>{post.summary}</h5> <br/>
                         <p id={post.id}>{post.body}</p>
 
                         <Link to={{
@@ -62,3 +60,4 @@ let dummyData = [
 }
 
 export default PostSum;
+
