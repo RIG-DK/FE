@@ -29,6 +29,8 @@ let dummyData = [
     const [show, setShow] = useState('false');
     const [posts] = useState(dummyData)
     const [postid, setPostid] = useState('one')
+
+    console.log(props.posts)
     
     return (
         <div>
