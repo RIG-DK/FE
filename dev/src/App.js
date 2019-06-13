@@ -5,9 +5,25 @@ import Posts from './views/Posts.jsx';
 import Post from './views/Post.jsx'
 import NewPost from './views/NewPost.jsx'
 import Home from './views/Home.jsx'
-
+import axios from 'axios';
 class App extends Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3000/posts')  
+    .then((res) => {
+      this.setState({posts: res.data.allPosts})
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,12 +40,3 @@ class App extends Component {
 }
 
 export default App;
-
-/* imports already available: 
-
--- axios 
--- react-dom 
--- react-router-dom for { Route, BrowserRouter, Link } 
--- styled-components for styled
-
-*/
