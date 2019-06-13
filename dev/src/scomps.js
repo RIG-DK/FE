@@ -9,7 +9,7 @@ export const NavWrapper = styled.nav`{
     justify-content: space-between;
     height: 70px;
     background-color: ${primary};
-    a { color: white };
+    color: white;
     position: sticky; top: 0;
 
     #home { 
@@ -26,6 +26,7 @@ export const NavWrapper = styled.nav`{
         justify-content: space-around;
         margin-right: 2%;
         align-items: center;
+        cursor: pointer;
     };
 }`
 

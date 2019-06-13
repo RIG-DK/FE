@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { PostWrapper, SeeMoreButton } from '../scomps';
 import {Link} from 'react-router-dom';
 
-const PostSum = (props) => {
+const Posts = (props) => {
 
 let dummyData = [
         {
@@ -59,5 +59,5 @@ let dummyData = [
     )
 }
 
-export default PostSum;
+export default Posts;
 

@@ -3,7 +3,7 @@ import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 
-const MyEditor = () => {
+const NewPost = () => {
 
     const [text, setText] = useState("");
     const handleChange = (value) =>  {setText(value)};
@@ -12,14 +12,14 @@ const MyEditor = () => {
         <ReactQuill 
             value={text}
             onChange={handleChange}
-            modules={MyEditor.modules}
-            formats={MyEditor.formats}
-            placeholder="what's on your mind, Don?"
+            modules={NewPost.modules}
+            formats={NewPost.formats}
+            placeholder="what's on your mind?"
         />
     )
 }
 
-MyEditor.modules = {
+NewPost.modules = {
     toolbar: [
         [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
         [{size: []}],
@@ -35,7 +35,7 @@ MyEditor.modules = {
     }
 }
 
-MyEditor.formats = [
+NewPost.formats = [
 'header', 'font', 'size',
 'bold', 'italic', 'underline', 'strike', 'blockquote',
 'list', 'bullet', 'indent',
@@ -43,4 +43,4 @@ MyEditor.formats = [
 ]
   
 
-export default MyEditor;
+export default NewPost;

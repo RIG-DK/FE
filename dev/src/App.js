@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import Nav from './comps/Nav.jsx';
-import PostSum from './comps/PostSum.jsx';
-import PostPage from './views/PostPage.jsx'
-import MyEditor from './views/MyEditor.jsx'
-import HomePage from './views/HomePage.jsx'
+import Posts from './views/Posts.jsx';
+import Post from './views/Post.jsx'
+import NewPost from './views/NewPost.jsx'
+import Home from './views/Home.jsx'
 
 class App extends Component {
   
@@ -13,10 +13,10 @@ class App extends Component {
       <div className="App">
         <Nav/>
         <div className='Routes'>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/posts' component={PostSum} />
-          <Route path='/post/:id' component={PostPage} />
-          <Route path='/newPost' component={MyEditor}/>
+          <Route exact path='/' component={Home} />
+          <Route path='/posts' component={Posts} />
+          <Route path='/post/:id' component={Post} />
+          <Route path='/newPost' component={NewPost}/>
         </div>
       </div>
     );

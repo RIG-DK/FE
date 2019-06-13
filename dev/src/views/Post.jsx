@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostPage = (props) => {
+const Post = (props) => {
 
     const post = props.location.state.post
 
@@ -14,5 +14,5 @@ const PostPage = (props) => {
 };
 
 
-export default PostPage;
+export default Post;
 

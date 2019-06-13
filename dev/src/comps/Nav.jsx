@@ -9,9 +9,9 @@ const Nav = (props) => {
             <div className='links'>
                 <Link to={{pathname: `/posts`}}> <h4>Posts</h4> </Link>
                 <Link to={{pathname: `/newPost`}}> <h4>New</h4> </Link>
-                <a href='#'><h4>Videos</h4></a>
-                <a href='#'><h4>Chat</h4></a>
-                <a href='#'><h4>Glossary</h4></a>
+                <h4>Videos</h4>
+                <h4>Chat</h4>
+                <h4>Glossary</h4>
             </div>
         </NavWrapper>
     )
