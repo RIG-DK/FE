@@ -2,20 +2,39 @@ import React, {useState}from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
+import axios from 'axios';
+
 
 const NewPost = () => {
 
-    const [text, setText] = useState("");
-    const handleChange = (value) =>  {setText(value)};
+    const [body, setBody] = useState("");
+    const [title, setTitle] = useState("Test Post");
+    const [summary, setSummary] = useState("543");
+    const handleChange = (value) =>  {setBody(value)};
+
+    const makeNew = (body) => {
+        axios.post('http://localhost:3000/posts', {title, summary, body})
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
   
     return (
-        <ReactQuill 
-            value={text}
-            onChange={handleChange}
-            modules={NewPost.modules}
-            formats={NewPost.formats}
-            placeholder="what's on your mind?"
-        />
+        <div>
+            <input/>
+            <textarea/>
+            <ReactQuill 
+                value={body}
+                onChange={handleChange}
+                modules={NewPost.modules}
+                formats={NewPost.formats}
+                placeholder="what's on your mind?"
+            />
+            <button onClick={makeNew}>Submit</button>
+        </div>
     )
 }
 

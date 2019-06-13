@@ -30,7 +30,9 @@ class App extends Component {
         <Nav/>
         <div className='Routes'>
           <Route exact path='/' component={Home} />
-          <Route path='/posts' component={Posts} />
+          <Route path='/posts' render={props => (
+            <Posts {...props} posts={this.state.posts}/>
+          )} />
           <Route path='/post/:id' component={Post} />
           <Route path='/newPost' component={NewPost}/>
         </div>
