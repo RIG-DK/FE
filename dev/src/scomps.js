@@ -69,7 +69,6 @@ export const PostWrapper = styled.div`{
         }
     }
 
-
 }`
 
 export const SeeMoreButton = styled.button`{

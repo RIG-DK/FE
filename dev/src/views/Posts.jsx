@@ -27,26 +27,23 @@ let dummyData = [
     ];
 
     const [show, setShow] = useState('false');
-    const [posts] = useState(dummyData)
-    const [postid, setPostid] = useState('one')
-
-    console.log(props.posts)
+    const [postid, setPostid] = useState('')
     
     return (
         <div>
-            {posts.map(post => {
+            {props.posts.map(post => {
                 return (
                     <PostWrapper 
                         open={show}
                         postId = {postid}
                         onClick={() => {
                             setShow(show === 'false' ? 'true' : 'false');
-                            setPostid(post.id)
+                            setPostid(post.title[0])
                         }}
                      >
                         <h3>{post.title}</h3>
                         <h5>{post.summary}</h5> <br/>
-                        <p id={post.id}>{post.body}</p>
+                        <p id={post.title[0]}>{post.body}</p>
 
                         <Link to={{
                             pathname: `/post/${post.id}`,
