@@ -16,7 +16,6 @@ const Nav = (props) => {
                 <h4>Chat</h4>
                 <h4>Glossary</h4>
             </div>
-            <img src='../images/mathWheel3.png' alt=''/>
         </NavWrapper>
     )
 }

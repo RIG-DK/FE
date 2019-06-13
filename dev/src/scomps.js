@@ -89,8 +89,7 @@ export const SeeMoreButton = styled.button`{
 
 
 export const HomeTop = styled.div`{
-    background-color: black;
     height: 650px;
-    margin-top: -2%;
+    //margin-top: -20px;
 
 }`
