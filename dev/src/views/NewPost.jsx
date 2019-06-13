@@ -4,28 +4,25 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 
-
 const NewPost = () => {
 
     const [body, setBody] = useState("");
-    const [title, setTitle] = useState("Test Post");
-    const [summary, setSummary] = useState("543");
+    const [title] = useState("Add from app test");
+    const [summary] = useState("testing 12345");
     const handleChange = (value) =>  {setBody(value)};
 
-    const makeNew = (body) => {
+    let makeNew = () => {
         axios.post('http://localhost:3000/posts', {title, summary, body})
         .then((res) => {
-            console.log(res)
+            console.log(res);
         })
-        .catch((error) => {
-            console.log(error);
-        });
+        .catch((err) => {
+            console.log(err)
+        })
     }
   
     return (
-        <div>
-            <input/>
-            <textarea/>
+        <>
             <ReactQuill 
                 value={body}
                 onChange={handleChange}
@@ -34,7 +31,7 @@ const NewPost = () => {
                 placeholder="what's on your mind?"
             />
             <button onClick={makeNew}>Submit</button>
-        </div>
+        </>
     )
 }
 
