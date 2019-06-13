@@ -1,11 +1,12 @@
 import React from 'react';
+import {HomeTop} from '../scomps.js'
 
 const Home = () => {
 
     return (
-        <div>
+        <HomeTop>
             <h1>Home Page</h1>
-        </div>
+        </HomeTop>
     )
 }
 

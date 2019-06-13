@@ -7,7 +7,7 @@ const secondary = '#00796b';
 export const NavWrapper = styled.nav`{
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 80px;
     background-color: ${primary};
     color: white;
     position: sticky; top: 0;
@@ -28,6 +28,11 @@ export const NavWrapper = styled.nav`{
         align-items: center;
         cursor: pointer;
     };
+
+    img {
+        height: 50px;
+        width: 50px;
+    }
 }`
 
 export const PostWrapper = styled.div`{
@@ -83,8 +88,9 @@ export const SeeMoreButton = styled.button`{
 }`
 
 
-// #one {
-//     display: ${props => 
-//         props.open === 'true' && 'none'
-//     }
-// }
+export const HomeTop = styled.div`{
+    background-color: black;
+    height: 650px;
+    margin-top: -2%;
+
+}`
