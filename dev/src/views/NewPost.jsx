@@ -7,7 +7,7 @@ import axios from 'axios';
 const NewPost = () => {
 
     const [body, setBody] = useState("");
-    const [title] = useState("What is an Avatar 2?");
+    const [title] = useState("What is an Avatar?");
     const [summary] = useState("There seems to be a lot of confusion surrounding the subject of me being an avatar and what not; mostly because people don't understand what an avatar is, or what it's supposed to do...");
     const handleChange = (value) =>  {setBody(value)};
 
@@ -22,7 +22,7 @@ const NewPost = () => {
     }
   
     return (
-        <>
+        <div className="editor">
             <ReactQuill 
                 value={body}
                 onChange={handleChange}
@@ -31,7 +31,7 @@ const NewPost = () => {
                 placeholder="what's on your mind?"
             />
             <button onClick={makeNew}>Submit</button>
-        </>
+        </div>
     )
 }
 

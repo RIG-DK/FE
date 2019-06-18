@@ -1,14 +1,13 @@
 
 import styled from 'styled-components';
 
-const primary =  '#303f9f';
+// const primary =  '#303f9f';
 const secondary = '#00796b';
 
 export const NavWrapper = styled.nav`{
     display: flex;
     justify-content: space-between;
     height: 60px;
-    // background-color: ${primary};
     background-color: black;
     color: white;
     position: sticky; top: 0;
@@ -46,7 +45,6 @@ export const PostWrapper = styled.div`{
     border: solid ${secondary} 1px;
     white-space: pre-wrap;
     height: 100%;
-
     h3, h5, p {
         margin-left: 2%;
         width: 95%;
@@ -59,7 +57,7 @@ export const PostWrapper = styled.div`{
         font-weight: 400;
     }
 
-    div {
+    .bod {
         display: none;
     }
 
@@ -89,10 +87,24 @@ export const SeeMoreButton = styled.button`{
 
 export const HomeTop = styled.div`{
     height: 650px;
-    // background-color: #e0edf0;
-
     h1 {
         margin-top: 0px;
     }
 
+}`
+
+export const StyledPost = styled.div`{
+    width: 85%;
+    box-shadow: 0px 0px 30px -2px gray;
+    margin: 0 auto;
+    padding: 2% 5% 3% 5%;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
 }`

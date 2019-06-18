@@ -54,6 +54,13 @@ a {
 	color: inherit;
 }
 
-/* .App {
-	background-color: black;
-} */
+button {
+	outline: none;
+}
+
+.editor {
+	margin-top: 30px;
+}
+.ql-editor {
+	min-height: 550px;
+}
