@@ -7,8 +7,9 @@ const secondary = '#00796b';
 export const NavWrapper = styled.nav`{
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    background-color: ${primary};
+    height: 60px;
+    // background-color: ${primary};
+    background-color: black;
     color: white;
     position: sticky; top: 0;
 
@@ -16,7 +17,6 @@ export const NavWrapper = styled.nav`{
         display: flex;
         margin-left: 2% 
         align-items: center;
-        text-transform: uppercase;
     };
 
     .links {
@@ -27,11 +27,14 @@ export const NavWrapper = styled.nav`{
         margin-right: 2%;
         align-items: center;
         cursor: pointer;
+        // color: #e0edf0;
     };
 
     img {
         height: 50px;
         width: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
     }
 }`
 
@@ -43,9 +46,6 @@ export const PostWrapper = styled.div`{
     border: solid ${secondary} 1px;
     white-space: pre-wrap;
     height: 100%;
-    :hover {
-        cursor: pointer;
-    }
 
     h3, h5, p {
         margin-left: 2%;
@@ -59,7 +59,7 @@ export const PostWrapper = styled.div`{
         font-weight: 400;
     }
 
-    p {
+    div {
         display: none;
     }
 
@@ -89,6 +89,10 @@ export const SeeMoreButton = styled.button`{
 
 export const HomeTop = styled.div`{
     height: 650px;
-    //margin-top: -20px;
+    // background-color: #e0edf0;
+
+    h1 {
+        margin-top: 0px;
+    }
 
 }`

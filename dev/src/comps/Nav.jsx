@@ -2,12 +2,12 @@ import React from 'react';
 import {NavWrapper} from '../scomps.js';
 import {Link} from 'react-router-dom';
 
-
 const Nav = (props) => {
     return (
         <NavWrapper>
             <Link to={{pathname: `/`}} id='home'> 
-                <h1>DK</h1> 
+                <img src='../images/mathWheel3.png' alt=''/>    
+                {/* <h2>Seeing in Principles</h2>  */}
             </Link>
             <div className='links'>
                 <Link to={{pathname: `/posts`}}> <h4>Posts</h4> </Link>

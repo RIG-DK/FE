@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 const Post = (props) => {
 
@@ -8,7 +9,7 @@ const Post = (props) => {
         <div>
             <h1>{post.title}</h1>
             <p>{post.summary}</p>
-            <p>{post.body}</p>
+            {parse(post.body)}
         </div>
     )
 };

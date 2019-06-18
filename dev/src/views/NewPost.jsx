@@ -1,4 +1,4 @@
-import React, {useState}from 'react';
+import React, {useState} from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
@@ -7,14 +7,14 @@ import axios from 'axios';
 const NewPost = () => {
 
     const [body, setBody] = useState("");
-    const [title] = useState("Add from app test");
-    const [summary] = useState("testing 12345");
+    const [title] = useState("What is an Avatar 2?");
+    const [summary] = useState("There seems to be a lot of confusion surrounding the subject of me being an avatar and what not; mostly because people don't understand what an avatar is, or what it's supposed to do...");
     const handleChange = (value) =>  {setBody(value)};
 
-    let makeNew = () => {
+    const makeNew = () => {
         axios.post('http://localhost:3000/posts', {title, summary, body})
         .then((res) => {
-            console.log(res);
+            alert('post created!!')
         })
         .catch((err) => {
             console.log(err)
@@ -47,7 +47,7 @@ NewPost.modules = {
     ],
     clipboard: {
         // toggle to add extra line breaks when pasting HTML:
-        matchVisual: true,
+        matchVisual: false,
     }
 }
 
