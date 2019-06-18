@@ -27,7 +27,7 @@ const Posts = () => {
         <div className="wrapper">
             {posts && posts.map(post => {
                 return (
-                    <PostWrapper>
+                    <PostWrapper key={post.id}>
 
                         <h3>{post.title}</h3>
                         <h5>{post.summary}</h5> <br/>

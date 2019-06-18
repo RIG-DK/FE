@@ -3,18 +3,22 @@ import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
+import { SeeMoreButton, Headings } from '../scomps.js';
 
-const NewPost = () => {
+const NewPost = (props) => {
 
     const [body, setBody] = useState("");
-    const [title] = useState("What is an Avatar?");
-    const [summary] = useState("There seems to be a lot of confusion surrounding the subject of me being an avatar and what not; mostly because people don't understand what an avatar is, or what it's supposed to do...");
-    const handleChange = (value) =>  {setBody(value)};
+    const [title, setTitle] = useState("");
+    const [summary, setSummary] = useState("");
+
+    const handleBodyChange = (value) =>  {setBody(value)};
+    const handleTitleChange = (e) =>  {setTitle(e.target.value)};
+    const handleSummaryChange = (e) =>  {setSummary(e.target.value)};
 
     const makeNew = () => {
         axios.post('http://localhost:3000/posts', {title, summary, body})
         .then((res) => {
-            alert('post created!!')
+            props.history.push('/posts')
         })
         .catch((err) => {
             console.log(err)
@@ -23,22 +27,31 @@ const NewPost = () => {
   
     return (
         <div className="editor">
+            <Headings>
+                <input 
+                    onChange={handleTitleChange} 
+                    placeholder="title" 
+                />
+                <textArea 
+                    onChange={handleSummaryChange} 
+                    placeholder="summary"
+                />
+            </Headings>
             <ReactQuill 
                 value={body}
-                onChange={handleChange}
+                onChange={handleBodyChange}
                 modules={NewPost.modules}
                 formats={NewPost.formats}
                 placeholder="what's on your mind?"
             />
-            <button onClick={makeNew}>Submit</button>
+            <SeeMoreButton onClick={makeNew}>Submit</SeeMoreButton>
         </div>
     )
 }
 
 NewPost.modules = {
     toolbar: [
-        [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-        [{size: []}],
+        [{ 'header': '1'}, {'header': '2'}],
         ['bold', 'italic', 'underline', 'strike', 'blockquote'],
         [{'list': 'ordered'}, {'list': 'bullet'}, 
         {'indent': '-1'}, {'indent': '+1'}],
@@ -52,10 +65,8 @@ NewPost.modules = {
 }
 
 NewPost.formats = [
-'header', 'font', 'size',
-'bold', 'italic', 'underline', 'strike', 'blockquote',
-'list', 'bullet', 'indent',
-'link', 'image', 'video'
+'header', 'bold', 'italic', 'underline', 'strike', 'blockquote',
+'list', 'bullet', 'indent','link', 'image', 'video'
 ]
   
 

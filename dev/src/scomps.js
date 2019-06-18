@@ -11,6 +11,7 @@ export const NavWrapper = styled.nav`{
     background-color: black;
     color: white;
     position: sticky; top: 0;
+    z-index: 1;
 
     #home { 
         display: flex;
@@ -107,4 +108,30 @@ export const StyledPost = styled.div`{
         display: flex;
         justify-content: center;
     }
+}`
+
+export const Headings = styled.div`{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    input {
+        height: 40px;
+        padding: 10px;
+        outline: none;
+        font-size: 18px;
+    }
+
+    textArea {
+        height: 100px;
+        padding: 10px;
+        outline: none;
+        font-size: 14px;
+    }
+
 }`
