@@ -17,11 +17,21 @@ const Posts = () => {
         setPosts(posts.data.allPosts);
     };
 
+    async function filterPosts(e){
+        e.preventDefault()
+        let relPosts = await posts.filter((p) => {
+            return (p.title.toUpperCase().includes(searchInput.toUpperCase()));
+        });
+        setPosts(relPosts)
+    };
+
+    const [posts, setPosts] = useState(null);
+    const [searchInput, setSearchInput] = useState("");
+    const handleChange = (e) =>  {setSearchInput(e.target.value)};
+
     useEffect(() => {
         asyncFetch();
     }, []);
-
-    const [posts, setPosts] = useState(null);
 
     return (
         <div className="wrapper">
@@ -30,6 +40,16 @@ const Posts = () => {
             }}>
                 <i class="fal fa-plus-circle"></i> 
             </Link>
+            <div className="search">
+                <form>
+                    <i class="far fa-search"></i>
+                    <input
+                        onChange={handleChange}
+                        placeholder="search posts..." 
+                    />
+                    <button type="submit" onClick={filterPosts}>Search</button>
+                </form>
+            </div>
             <PostsWrapper>
                 {posts && posts.map(post => {
                     return (
