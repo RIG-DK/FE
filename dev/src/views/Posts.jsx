@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PostWrapper, SeeMoreButton } from '../scomps.js';
+import { PostWrapper, SeeMoreButton, PostsWrapper } from '../scomps.js';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import axios from 'axios';
@@ -25,27 +25,35 @@ const Posts = () => {
 
     return (
         <div className="wrapper">
-            {posts && posts.map(post => {
-                return (
-                    <PostWrapper key={post.id}>
+            <Link id='icon' to={{
+                pathname: '/newPost'
+            }}>
+                <i class="fal fa-plus-circle"></i> 
+            </Link>
+            <PostsWrapper>
+                {posts && posts.map(post => {
+                    return (
+                        <PostWrapper key={post.id}>
 
-                        <h3>{post.title}</h3>
-                        <h5>{post.summary}</h5> <br/>
-                        <div className="bod" id={post.title.split(' ').join('')}>{parse(post.body)}</div>
+                            <h3>{post.title}</h3>
+                            <h5>{post.summary}</h5> <br/>
+                            <div className="bod" id={post.title.split(' ').join('')}>{parse(post.body)}</div>
+                            <div className="links">
+                            <Link to={{
+                                pathname: `/post/${post.id}`,
+                                state: {post: post}
+                            }}>
+                                <SeeMoreButton> <i class="fas fa-book-reader"></i>   Continue</SeeMoreButton>                        
+                            </Link>
 
-                        <Link to={{
-                            pathname: `/post/${post.id}`,
-                            state: {post: post}
-                        }}>
-                            <SeeMoreButton>Continue Reading</SeeMoreButton>                        
-                        </Link>
+                            <SeeMoreButton onClick={() => delPost(post.id)}> Delete   <i class="fas fa-trash-alt"></i></SeeMoreButton>
+                            <SeeMoreButton> Edit   <i class="fas fa-pencil"></i></SeeMoreButton>
+                            </div>
 
-                        <SeeMoreButton onClick={() => delPost(post.id)}>Delete</SeeMoreButton>
-                        <SeeMoreButton>Edit</SeeMoreButton>
-
-                    </PostWrapper>
-                )
-            })}
+                        </PostWrapper>
+                    )
+                })}
+            </PostsWrapper>
         </div>
     );
 };

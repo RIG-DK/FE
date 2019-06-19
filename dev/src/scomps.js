@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // const primary =  '#303f9f';
-const secondary = '#00796b';
+// const secondary = '#00796b';
 
 export const NavWrapper = styled.nav`{
     display: flex;
@@ -27,7 +27,7 @@ export const NavWrapper = styled.nav`{
         margin-right: 2%;
         align-items: center;
         cursor: pointer;
-        // color: #e0edf0;
+        font-size: 14px;
     };
 
     img {
@@ -40,12 +40,12 @@ export const NavWrapper = styled.nav`{
 
 export const PostWrapper = styled.div`{
     margin: 0 auto;
-    width: 85%;
     margin-bottom: 3%;
     margin-top: 3%;
-    border: solid ${secondary} 1px;
+    border: solid black 2px;
     white-space: pre-wrap;
     height: 100%;
+    width: 75%;
     h3, h5, p {
         margin-left: 2%;
         width: 95%;
@@ -62,6 +62,7 @@ export const PostWrapper = styled.div`{
         display: none;
     }
 
+
     #${props => props.postId} {
         display: ${props => 
             props.open === 'true' && 'block'
@@ -73,13 +74,15 @@ export const PostWrapper = styled.div`{
 export const SeeMoreButton = styled.button`{
     width: 150px;
     height: 40px;
-    border-color: ${secondary};
+    // border-color: gray;
+    // background-color: gray;
+    // color: white;
     margin-left: 2%;
     margin-bottom: 3%;
     text-transform: uppercase;
 
     :hover {
-        background-color: ${secondary}
+        background-color: black;
         color: white;
         cursor: pointer;
     }
@@ -134,4 +137,10 @@ export const Headings = styled.div`{
         font-size: 14px;
     }
 
+}`
+
+export const PostsWrapper = styled.div`{
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
 }`

@@ -72,3 +72,18 @@ button {
 	margin-top: 15px;
 	margin-left: 0px;
 }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.wrapper #icon {
+	font-size: 2.5rem;
+	margin-top: 5%;
+}
+
+.wrapper #icon :hover {
+	color: gray;
+}
