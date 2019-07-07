@@ -62,13 +62,6 @@ export const PostWrapper = styled.div`{
         display: none;
     }
 
-
-    #${props => props.postId} {
-        display: ${props => 
-            props.open === 'true' && 'block'
-        }
-    }
-
 }`
 
 export const SeeMoreButton = styled.button`{
@@ -90,10 +83,37 @@ export const SeeMoreButton = styled.button`{
 
 
 export const HomeTop = styled.div`{
-    height: 650px;
-    h1 {
-        margin-top: 0px;
+    height: 600px;
+    background-color: #f4f7fb;
+    color: black;
+    border: solid #f4f7fb 1px;
+
+    #title {
+        margin-top: 5%;
+        margin-left: 3%;
+        font-size: 2rem;
     }
+
+    #titleP {
+        margin-left: 3%;
+    }
+
+    .topMid {
+        display: flex;
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 5%;
+        justify-content: space-between;
+
+        .card {
+            border: solid black 2px;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            width: 30%;
+        }
+    }
+
 
 }`
 
@@ -143,4 +163,26 @@ export const PostsWrapper = styled.div`{
     // display: flex;
     // flex-direction: row;
     // flex-wrap: wrap;
+}`
+
+export const LoginForm = styled.form`{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+
+    input {
+        width: 450px;
+        height: 50px;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+        padding-left: 15px;
+    }
+
+    button {
+        margin-top: 15px;
+        height: 30px;
+        width: 130px;
+    }
 }`

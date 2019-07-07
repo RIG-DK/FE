@@ -103,3 +103,7 @@ button {
 .wrapper #icon :hover {
 	color: gray;
 }
+
+body {
+	background-color: #f4f7fb;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavWrapper} from '../scomps.js';
+import { NavWrapper } from '../scomps.js';
 import { Link } from 'react-router-dom';
 
-const Nav = (props) => {
+const Nav = () => {
     return (
         <NavWrapper>
             <Link to={{pathname: `/`}} id='home'> 
@@ -16,6 +16,6 @@ const Nav = (props) => {
             </div>
         </NavWrapper>
     )
-}
+};
 
 export default Nav;

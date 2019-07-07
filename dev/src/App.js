@@ -5,6 +5,7 @@ import Posts from './views/Posts.jsx';
 import Post from './views/Post.jsx'
 import NewPost from './views/NewPost.jsx'
 import Home from './views/Home.jsx'
+import Login from './views/Login';
 
 const App = () => {
 
@@ -12,8 +13,9 @@ const App = () => {
     <div className="App">
       <Nav/>
       <div className='Routes'>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/posts' component={Posts} />
+        <Route exact path='/' component={Login} /> 
+        <Route path='/home' component={Home} />
+        <Route path='/posts' component={Posts} />
         <Route path='/post/:id' component={Post} />
         <Route path='/newPost' component={NewPost}/>
       </div>
