@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "browserslist": "^4.6.3",
+    "caniuse-lite": "^1.0.30000981",
     "html-react-parser": "^0.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
@@ -20,6 +22,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "resolutions": {
+    "browserslist": "4.6.2",
+    "caniuse-lite": "1.0.30000974"
   },
   "browserslist": [
     ">0.2%",

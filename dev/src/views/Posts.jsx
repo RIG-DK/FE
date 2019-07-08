@@ -38,11 +38,11 @@ const Posts = () => {
             <Link id='icon' to={{
                 pathname: '/newPost'
             }}>
-                <i class="fal fa-plus-circle"></i> 
+                <i className="fal fa-plus-circle"></i> 
             </Link>
             <div className="search">
                 <form>
-                    <i class="far fa-search"></i>
+                    <i className="far fa-search"></i>
                     <input
                         onChange={handleChange}
                         placeholder="search posts..." 
@@ -63,11 +63,11 @@ const Posts = () => {
                                 pathname: `/post/${post.id}`,
                                 state: {post: post}
                             }}>
-                                <SeeMoreButton> <i class="fas fa-book-reader"></i>   Continue</SeeMoreButton>                        
+                                <SeeMoreButton> <i className="fas fa-book-reader"></i>   Continue</SeeMoreButton>                        
                             </Link>
 
-                            <SeeMoreButton onClick={() => delPost(post.id)}> Delete   <i class="fas fa-trash-alt"></i></SeeMoreButton>
-                            <SeeMoreButton> Edit   <i class="fas fa-pencil"></i></SeeMoreButton>
+                            <SeeMoreButton onClick={() => delPost(post.id)}> Delete   <i className="fas fa-trash-alt"></i></SeeMoreButton>
+                            <SeeMoreButton> Edit<i className="fas fa-pencil"></i></SeeMoreButton>
                             </div>
 
                         </PostWrapper>

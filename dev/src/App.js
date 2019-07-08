@@ -13,8 +13,8 @@ const App = () => {
     <div className="App">
       <Nav/>
       <div className='Routes'>
-        <Route exact path='/' component={Login} /> 
-        <Route path='/home' component={Home} />
+        <Route exact path='/' component={Home} /> 
+        <Route path='/admin' component={Login} />
         <Route path='/posts' component={Posts} />
         <Route path='/post/:id' component={Post} />
         <Route path='/newPost' component={NewPost}/>
