@@ -40,9 +40,7 @@ const Login = (props) => {
                 console.log(res);
                 localStorage.setItem('jwt', res.data.token);
                 localStorage.setItem('userId', res.data.userId)
-                // const token = localStorage.getItem('jwt');
                 props.history.push('/posts')
-
             }).catch(err => console.log(err));
     };
 

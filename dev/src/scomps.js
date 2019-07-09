@@ -12,6 +12,7 @@ export const NavWrapper = styled.nav`{
     color: white;
     position: sticky; top: 0;
     z-index: 1;
+    margin-bottom: 2%;
 
     #home { 
         display: flex;
@@ -46,6 +47,7 @@ export const PostWrapper = styled.div`{
     white-space: pre-wrap;
     height: 100%;
     width: 75%;
+    background-color: white;
     h3, h5, p {
         margin-left: 2%;
         width: 95%;

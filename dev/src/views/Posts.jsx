@@ -35,19 +35,20 @@ const Posts = () => {
 
     return (
         <div className="wrapper">
+            { localStorage.getItem('jwt') && 
             <Link id='icon' to={{
                 pathname: '/newPost'
             }}>
                 <i className="fal fa-plus-circle"></i> 
-            </Link>
+            </Link> }
             <div className="search">
-                <form>
+                <form onSubmit={filterPosts}>
                     <i className="far fa-search"></i>
                     <input
                         onChange={handleChange}
                         placeholder="search posts..." 
                     />
-                    <button type="submit" onClick={filterPosts}>Search</button>
+                    {/* <button type="submit" onClick={filterPosts}>Search</button> */}
                 </form>
             </div>
             <PostsWrapper>
@@ -63,11 +64,15 @@ const Posts = () => {
                                 pathname: `/post/${post.id}`,
                                 state: {post: post}
                             }}>
-                                <SeeMoreButton> <i className="fas fa-book-reader"></i>   Continue</SeeMoreButton>                        
+                                <SeeMoreButton> <i className="fas fa-book-reader"></i> Continue</SeeMoreButton>
                             </Link>
-
-                            <SeeMoreButton onClick={() => delPost(post.id)}> Delete   <i className="fas fa-trash-alt"></i></SeeMoreButton>
-                            <SeeMoreButton> Edit<i className="fas fa-pencil"></i></SeeMoreButton>
+                            { 
+                                localStorage.getItem('jwt') &&
+                                <>
+                                    <SeeMoreButton onClick={() => delPost(post.id)}> Delete <i className="fas fa-trash-alt"></i></SeeMoreButton>
+                                    <SeeMoreButton> Edit<i className="fas fa-pencil"></i></SeeMoreButton>
+                                </>
+                            }
                             </div>
 
                         </PostWrapper>
