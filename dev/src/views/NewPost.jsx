@@ -7,6 +7,7 @@ import { SeeMoreButton, Headings } from '../scomps.js';
 
 const NewPost = (props) => {
 
+    const URL = 'https://realityisgod.herokuapp.com';
     const [body, setBody] = useState("");
     const [title, setTitle] = useState("");
     const [summary, setSummary] = useState("");
@@ -16,7 +17,7 @@ const NewPost = (props) => {
     const handleSummaryChange = (e) =>  {setSummary(e.target.value)};
 
     const makeNew = () => {
-        axios.post('http://localhost:3000/posts', {title, summary, body})
+        axios.post(`${URL}/posts`, {title, summary, body})
         .then((res) => {
             props.history.push('/posts')
         })
@@ -32,7 +33,7 @@ const NewPost = (props) => {
                     onChange={handleTitleChange} 
                     placeholder="title" 
                 />
-                <textArea 
+                <textarea 
                     onChange={handleSummaryChange} 
                     placeholder="summary"
                 />

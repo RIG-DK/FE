@@ -4,6 +4,8 @@ import axios from 'axios';
 
 const Login = (props) => {
 
+
+    const URL = 'https://realityisgod.herokuapp.com';
     const [username, setUsername] = useState('username');
     const [password, setPassword] = useState('password');
     // const [email, setEmail] = useState('email');
@@ -35,7 +37,7 @@ const Login = (props) => {
         e.preventDefault();
         const loginCreds = {username, password}
         axios
-            .post('http://localhost:3000/api/auth/login', loginCreds)
+            .post(`${URL}/api/auth/login`, loginCreds)
             .then(res => {
                 console.log(res);
                 localStorage.setItem('jwt', res.data.token);

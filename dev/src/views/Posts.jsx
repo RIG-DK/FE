@@ -5,15 +5,17 @@ import parse from 'html-react-parser';
 import axios from 'axios';
 
 const Posts = () => {
+
+    const URL = 'https://realityisgod.herokuapp.com';
     
     async function delPost(id) {
-        await axios.delete(`http://localhost:3000/posts/${id}`);
-        const posts = await axios.get('http://localhost:3000/posts');
+        await axios.delete(`${URL}/posts/${id}`);
+        const posts = await axios.get(`${URL}/posts`);
         setPosts(posts.data.allPosts);
     };
 
     async function asyncFetch() {
-        const posts = await axios.get('http://localhost:3000/posts');
+        const posts = await axios.get(`${URL}/posts`);
         setPosts(posts.data.allPosts);
     };
 
