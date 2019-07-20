@@ -5,7 +5,8 @@ import Posts from './views/Posts.jsx';
 import Post from './views/Post.jsx'
 import NewPost from './views/NewPost.jsx'
 import Home from './views/Home.jsx'
-import Login from './views/Login';
+import Login from './views/Login.jsx';
+import Videos from './views/Videos.jsx';
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/posts' component={Posts} />
         <Route path='/post/:id' component={Post} />
         <Route path='/newPost' component={NewPost}/>
+        <Route path='/videos' component={Videos} />
       </div>
     </div>
   );

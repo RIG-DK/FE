@@ -12,8 +12,9 @@ const Nav = () => {
             <div className='links'>
                 {!localStorage.getItem('jwt') ? <Link to={{pathname: `/admin`}}> <h4>Login</h4> </Link> : <h4>Logout</h4> }
                 <Link to={{pathname: `/posts`}}> <h4>Posts</h4> </Link>
-                <h4>Videos</h4>
+                <Link to={{pathname: `/videos`}}> <h4>Videos</h4> </Link>
                 <h4>Glossary</h4>
+                <h4>Contact</h4>
             </div>
         </NavWrapper>
     )

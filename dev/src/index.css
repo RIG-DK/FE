@@ -107,5 +107,7 @@ button {
 }
 
 body {
-	background-color: #f4f7fb;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient(to right bottom, #1d2023, #2a3033, #384144, #475355, #576565);
 }

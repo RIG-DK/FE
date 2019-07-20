@@ -13,15 +13,17 @@ export const NavWrapper = styled.nav`{
     position: sticky; top: 0;
     z-index: 1;
     margin-bottom: 2%;
-
+    text-transform: uppercase;
     #home { 
         display: flex;
         margin-left: 2% 
         align-items: center;
+        h2 {
+            font-size: 1.3rem;
+        }
     };
 
     .links {
-        text-transform: uppercase;
         display: flex;
         width: 33%;
         justify-content: space-around;
@@ -86,18 +88,18 @@ export const SeeMoreButton = styled.button`{
 
 export const HomeTop = styled.div`{
     height: 600px;
-    background-color: #f4f7fb;
-    color: black;
-    border: solid #f4f7fb 1px;
+    color: gray;
 
     #title {
-        margin-top: 5%;
-        margin-left: 3%;
-        font-size: 2rem;
+        margin-left: 8%;
+        margin-top: 3%;
+        font-size: 1.5rem;
     }
 
-    #titleP {
-        margin-left: 3%;
+    #header {
+        margin-left: 5%;
+        margin-top: 7%;
+        font-size: 1.7rem;
     }
 
     .topMid {
@@ -113,6 +115,8 @@ export const HomeTop = styled.div`{
             flex-direction: column;
             padding: 15px;
             width: 30%;
+            line-height: 1.5;
+            margin-bottom: 5%;
         }
     }
 
